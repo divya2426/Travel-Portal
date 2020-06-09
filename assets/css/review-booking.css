@@ -1,0 +1,56 @@
+p
+{
+	margin: 5px 0px;
+}
+.review-booking-container
+{
+	padding:5px 0px;
+}
+.preview-details-row
+{
+padding:10px 0px;
+}
+.preview-section-row
+{
+margin:10px 0px;	
+}
+.page-title {
+    font-size: 24px !important;
+    color: rgba(69, 90, 100, 0.75);
+    font-weight: 400;
+	margin:20px 0px;
+}
+.section-title
+{
+	color: #455A64;
+    font-size: 18px;
+    font-weight: 500;
+    border-bottom: 1px solid #ddd;
+    padding: 5px 0px;
+}
+.section-sub-title
+{
+	color: #455A64;
+	font-size: 14px;
+	font-weight: 500;
+	border-bottom: 1px dashed #ddd;
+    padding: 5px 0px;
+}
+.info-head
+{
+	color: #A2ABB4;
+	font-size: 13px;
+}
+.info-content
+{
+	color: #455A64;
+	font-size: 13px;
+}
+
+
+@media only screen and (min-width: 993px) {
+    .container {
+        width: 85%;
+    }
+}	
+	

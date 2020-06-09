@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>Travel Portal</title>
+      <link rel='stylesheet prefetch' href='assets/css/angular-material.min.css'>
+      <link rel='stylesheet prefetch' href='assets/css/mdPickers.min.css'>
+      <script src='assets/js/angular.min.js'></script><!-- Version 1.4.8 -->
+      <script src='assets/js/angular-material.min.js'></script> <!-- https://cdn.rawgit.com/angular/bower-material/v1.0.6/angular-material.min.js-->
+      <script src='assets/js/moment.min.js'></script> <!--https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.13.0/moment.min.js -->
+      <script src='assets/js/angular-animate.min.js'></script> <!--Version 1.4.8 -->
+      <script src='assets/js/angular-aria.min.js'></script><!--Version 1.4.8 -->
+      <script src='assets/js/mdPickers.min.js'></script> <!-- https://cdn.rawgit.com/alenaksu/mdPickers/0.7.4/dist/mdPickers.min.js-->
+      <script src='assets/js/angular-messages.min.js'></script><!--Version 1.4.8 -->
+      <script type="text/javascript" src="assets/js/jquery-3.2.0.min.js"></script>
+      <script type="text/javascript" src="assets/js/materialize.min.js"></script>
+      <link type="text/css" rel="stylesheet" href="assets/css/materialize.css"/>
+      <link type="text/css" rel="stylesheet" href="assets/css/main.css"  />
+	   <link type="text/css" rel="stylesheet" href="assets/css/header.css"  />
+	   <link type="text/css" rel="stylesheet" href="assets/css/footer.css"  />
+      <link type="text/css" rel="stylesheet" href="assets/fonts/icomoon/style.css" />
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+      <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"/>
+   </head>
+   <body>
+      <div ng-controller="TravelAppCtrl"  ng-app="TravelApp"  ng-cloak>
+         <div class="nav-header">
+            <md-sidenav-container>
+               <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left">
+                  <md-toolbar layout="row" id="grad">
+                     <div class="md-toolbar-tools">
+                        <div><a href="#" class="brand-logo"><img src="assets/img/logo-my-travel.png" alt="Travel Logo"></a></div>
+                        <div flex></div>
+                        <button md-button class="md-icon-button" aria-label="Close Side Panel" ng-click="closeSideNavPanel()">
+                           <md-icon class="md-default-theme material-icons">&#xE5CD;</md-icon>
+                        </button>
+                     </div>
+                  </md-toolbar>
+                  <div class="sidnav-content layout-padding" >
+                     Side navigation Panel
+                  </div>
+               </md-sidenav>
+            </md-sidenav-container>
+            <md-toolbar class="desktop nav-head" id="grad">
+            
+			   <div class="row nav-row">
+			     <div class="col l9 nav-col">
+                  <button md-button class="md-icon-button menu-btn" aria-label="Side Panel" ng-click="openSideNavPanel()">
+                     <md-icon ><i class="icon-menu5 "></i></md-icon>
+                  </button>
+                  <a href="#" class="brand-logo"><img src="assets/img/logo-my-travel.png" alt="Logo"></a>
+               </div>
+                  <div class="col l3">
+                     <ul class="right-sidenav">
+                        <li><a href="#"><i class="icon-help"></i></a></li>
+                        <li class="notification"><a href="#"><i class="icon-notification badge1" data-badge="1"></i></a></li>
+                        <li><a><img src="assets/img/user.png" class="responsive-img circle right profile-img"  alt=""></a></li>
+                     </ul>
+                  </div>
+				 </div> 
+            </md-toolbar>
+            <md-toolbar class="tablet nav-head" id="grad">
+                 <div class="row nav-row">
+			     <div class="col m6 nav-col">
+                  <button md-button class="md-icon-button menu-btn" aria-label="Side Panel" ng-click="openSideNavPanel()">
+                     <md-icon ><i class="icon-menu5 "></i></md-icon>
+                  </button>
+                  <a href="#" class="brand-logo"><img src="assets/img/logo-my-travel.png" alt="Logo"></a>
+               </div>
+                  <div class="col m6">
+                     <ul class="right-sidenav">
+                        <li><a href="#"><i class="icon-help"></i></a></li>
+                        <li class="notification"><a href="#"><i class="icon-notification badge1" data-badge="1"></i></a></li>
+                        <li><a><img src="assets/img/user.png" class="responsive-img circle right profile-img"  alt=""></a></li>
+                     </ul>
+                  </div>
+				 </div> 
+            </md-toolbar>
+            <md-toolbar class="mobile nav-head" id="grad">
+              <div class="row nav-row">
+			     <div class="col s6 nav-col">
+                  <button md-button class="md-icon-button menu-btn" aria-label="Side Panel" ng-click="openSideNavPanel()">
+                     <md-icon ><i class="icon-menu5 "></i></md-icon>
+                  </button>
+                  <a href="#" class="brand-logo"><img src="assets/img/logo-my-travel.png" alt="Logo"></a>
+               </div>
+                  <div class="col s6">
+                     <ul class="right-sidenav">
+                        <li><a href="#"><i class="icon-help"></i></a></li>
+                        <li class="notification"><a href="#"><i class="icon-notification badge1" data-badge="1"></i></a></li>
+                        <li><a><img src="assets/img/user.png" class="responsive-img circle right profile-img"  alt=""></a></li>
+                     </ul>
+                  </div>
+				 </div> 
+            </md-toolbar>
+         </div>
+         <div class="body-content travel-request-page page-content">
+            <div class="container tab-list">
+               <h2 class="page-title">International Travel Request</h2>
+            </div>
+            <md-tabs md-dynamic-height md-border-bottom >
+               <md-tab>
+                  <md-tab-label class="tabs-icon"><a class="tabs-icon"><i class="icon-profile"></i><span>Overview</span></a></md-tab-label>
+                  <md-tab-body>
+                     <div id="test1">
+                        <form>
+                           <div class="container form-container">
+                              <div class="row">
+                                 <div class="col s12">
+                                    <h2 class="form-title">Personal Details</h2>
+                                 </div>
+                                 <div class="input-field col s12 m6 l3">
+                                    <input  id="traveller-name" type="text">
+                                    <label for="traveller-name">Traveller Name</label>
+                                    <div class="text-info">*Make sure name is exactly matching with passport name.</div>
+                                 </div>
+                                 <div class="input-field col s12 m6 l3">
+                                    <input id="mobile" type="text"  >
+                                    <label for="mobile"  >Mobile</label>
+                                    <div class="error">Enter valid mobile number</div>
+                                 </div>
+                                 <div class="input-field col s12 m6 l3">
+                                    <md-input-container >
+                                       <label>Seat Preference</label>
+                                       <md-select name="purpose" ng-model="purpose" required>
+                                          <md-option value="Purpose1">Purpose1</md-option>
+                                          <md-option value="Purpose2">Purpose2</md-option>
+                                       </md-select>
+                                    </md-input-container>
+                                 </div>
+                              </div>
+                              <div class="row">
+                                 <div class="col s12">
+                                    <h2 class="form-title">Project & Client Details</h2>
+                                 </div>
+                                 <div class="input-field col s12 m6 l3">
+                                    <md-input-container >
+                                       <label>Project(s)</label>
+                                       <md-select name="project" ng-model="project" required>
+                                          <md-option value="Project1">Project1</md-option>
+                                          <md-option value="Project3">Project2</md-option>
+                                       </md-select>
+                                    </md-input-container>
+                                 </div>
+                                 <div class="input-field col s12 m6 l3">
+                                    <input id="approver" disabled type="text">
+                                    <label for="approver">Approver</label>
+                                 </div>
+                                 <div class="input-field col s12 m6 l3">
+                                    <input id="client-name" disabled type="text" >
+                                    <label for="client-name">Client Name</label>
+                                 </div>
+                                 <div class="input-field col s12 m6 l3">
+                                    <textarea id="client-address" class="form-textarea"></textarea>
+                                    <label for="client-address">Client Address</label>
+                                 </div>
+                              </div>
+                              <div class="row">
+                                 <div class="col s12">
+                                    <h2 class="form-title">Passport & Visa Details</h2>
+                                 </div>
+                                 <div class="input-field col s12 m6 l3">
+                                    <md-input-container class="select-box">
+                                       <label>Visa Type</label>
+                                       <md-select name="visa_type" ng-model="visa_type" required>
+                                          <md-option value="visa_type1">H1B</md-option>
+                                          <md-option value="visa_type2">L1</md-option>
+                                       </md-select>
+                                    </md-input-container>
+                                 </div>
+                                 <div class="input-field col s12 m6 l3">
+                                    <div class="datepicker">
+                                       <md-icon  class="icon-icon-calendar calendar-ico" ></md-icon>
+                                       <mdp-date-picker md-hide-icons="calendar" mdp-placeholder="Visa Expiration Date" mdp-date-filter="TravelAppCtrl.filterDate" ng-model="currentDateMinMax"></mdp-date-picker>
+                                    </div>
+                                 </div>
+                                 <div class="input-field col s12 m6 l3">
+                                    <input id="passport-number" type="text" >
+                                    <label for="passport-number">Passport Number</label>
+                                 </div>
+                                 <div class="input-field col s12 m6 l3">
+                                    <div class="datepicker">
+                                       <md-icon  class="icon-icon-calendar calendar-ico" ></md-icon>
+                                       <mdp-date-picker md-hide-icons="calendar"  mdp-placeholder="Passport Expiration Date" mdp-date-filter="TravelAppCtrl.filterDate" ng-model="currentDateMinMax9"></mdp-date-picker>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="row attach-doc">
+                                 <div class="input-field col s12 m12 l5">
+                                    <h2 class="form-title">Attach Documents</h2>
+                                    <div class="upload-douments">
+                                       <div class="btn input-file-btn col l3 s8 m6 white ">
+                                          <span><i>*</i>Passport</span>
+                                          <input type="file" class="input-file">
+                                          <i class="icon-icon-attachment"></i>
+                                       </div>
+                                       <div class="btn input-file-btn col l3 s8 m6 white">
+                                          <span><i>*</i>Visa</span>
+                                          <input type="file" class="input-file">
+                                          <i class="icon-icon-attachment"></i>
+                                       </div>
+                                       <div class="btn input-file-btn col l3 s8 m6 white">
+                                          <span>Other</span>
+                                          <input type="file" class="input-file">
+                                          <i class="icon-icon-attachment"></i>
+                                       </div>
+                                       <div class="col s1 help">
+                                          <i class="icon-help iconhelp"></i>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <div class="input-field col s12 m12 l6">
+                                    <h2 class="form-title">Other Requests</h2>
+                                    <div class="requests">
+                                       <div class="row">		
+                                          <input type="checkbox" class="filled-in " id="filled-in-box-laptop" checked="checked" />
+                                          <label for="filled-in-box-laptop" class="checkbox-request">Laptop</label>
+                                          <input type="checkbox" class="filled-in" id="filled-in-box-forex"  />
+                                          <label for="filled-in-box-forex" class="checkbox-request">Forex</label>
+                                          <input type="checkbox" class="filled-in" id="filled-in-box-translator" />
+                                          <label for="filled-in-box-translator" class="checkbox-request">Translator</label>
+                                       </div>
+                                       <div class="row">
+                                          <input class="with-gap" name="group1" type="radio" id="summer-kit"  />
+                                          <label for="summer-kit" class="radio-request">Summer Kit Allowance</label>
+                                          <input class="with-gap" name="group1" type="radio" id="winter-kit"  />
+                                          <label for="winter-kit" class="radio-request">Summer Kit Allowance</label>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="row">
+                                 <div class="col s12 col m6 col l3">
+                                    <div class="doc-file-name">Xoriant Digital Class Studies<i class="icon-remove file-close"></i></div>
+                                 </div>
+                                 <div class="col s12 col m6 col l3">
+                                    <div class="doc-file-name">Xoriant Digital Class Studies<i class="icon-remove file-close"></i></div>
+                                 </div>
+                                 <div class="col s12 col m6 col l3">
+                                    <div class="doc-file-name">Xoriant Digital Class Studies<i class="icon-remove file-close"></i></div>
+                                 </div>
+                                 <div class="col s12 col m6 col l3">
+                                    <div class="doc-file-name">Xoriant Digital Class Studies<i class="icon-remove file-close"></i></div>
+                                 </div>
+                              </div>
+                              <div class="form-footer">
+                                 <div class="form-footer-left-btn">
+                                    <button type="button" class="btn white cancel-btn border-btn"> Cancel</button>
+                                    <button type="button" class="btn white border-btn ">Save as Draft</button>
+                                 </div>
+                                 <div class="form-footer-right-btn">
+                                    <button type="button" class="btn disabled disabled-btn"> Prev</button>
+                                    <button type="button" class="btn  submit-btn next-btn">Next</button>
+                                 </div>
+                              </div>
+                           </div>
+                        </form>
+                     </div>
+                  </md-tab-body>
+               </md-tab>
+               <md-tab>
+                  <md-tab-label class="tabs-icon"><a class="tabs-icon"><i class="icon-icon-flight complete"></i><span>Flight</span></a></md-tab-label>
+                  <md-tab-body>
+                     <div id="test2">
+                        <form>
+                           <div class="container form-container">
+                              <div class="row">
+                                 <div class="col m9">
+                                    <ul class="flight-tabs">
+                                       <li>
+                                          <input class="with-gap" type="radio" id="one-way"  name="trip" ng-model="trip" value="one-way" ng-init="checked=true"/>
+                                          <label for="one-way" class="radio-request">One Way</label>
+                                       </li>
+                                       <li> 
+                                          <input class="with-gap" name="trip" type="radio" id="round-trip" ng-model="trip" value="round-trip"/>
+                                          <label for="round-trip" class="radio-request">Round Trip</label>
+                                       </li>
+                                       <li>
+                                          <input class="with-gap" name="trip" type="radio" id="multi-city"  ng-model="trip" value="multi-city"/>
+                                          <label for="multi-city" class="radio-request">Multi city</label>
+                                       </li>
+                                    </ul>
+                                 </div>
+                                 <div class="col m3">
+                                    <div class="switch client-billable"><label>Air travel Client Billable*<input type="checkbox" checked><span class="lever"></span></label></div>
+                                 </div>
+                              </div>
+                              <div ng-show="trip =='one-way'">
+                                 <div class="row">
+                                    <div class="col s12">
+                                       <h2 class="form-title">Travel Details</h2>
+                                    </div>
+                                 </div>
+                                 <div class="row">
+                                    <div class="input-field col s12 m6 l3">
+                                       <md-input-container >
+                                          <label>Leaving From</label>
+                                          <md-select name="leaving_from" ng-model="leaving_from" required>
+                                             <md-option value="Mumbai">Mumbai</md-option>
+                                             <md-option value="Pune">Pune</md-option>
+                                             <md-option value="Delhi">Delhi</md-option>
+                                          </md-select>
+                                       </md-input-container>
+                                    </div>
+                                    <div class="input-field col s12 m6 l3">
+                                       <div class="datepicker">
+                                          <md-icon  class="icon-icon-calendar calendar-ico" ></md-icon>
+                                          <mdp-date-picker md-hide-icons="calendar" mdp-placeholder="Visa Expiration Date"  mdp-date-filter="TravelAppCtrl.filterDate" ng-model="currentDateMinMax3"></mdp-date-picker>
+                                       </div>
+                                    </div>
+                                    <div class="input-field col s12 m6 l3">
+                                       <md-input-container >
+                                          <label>Going To</label>
+                                          <md-select name="going_to" ng-model="going_to" required>
+                                             <md-option value="Mumbai">Mumbai</md-option>
+                                             <md-option value="Pune">Pune</md-option>
+                                             <md-option value="Delhi">Delhi</md-option>
+                                          </md-select>
+                                       </md-input-container>
+                                    </div>
+                                 </div>
+                                 <div class="row">
+                                    <div class="input-field col s12 m6 l3">
+                                       <input id="frequent-flyer-number1" type="text" >
+                                       <label for="frequent-flyer-number1">Frequent Flyer Number</label>
+                                    </div>
+                                    <div class="input-field col s12 m6 l3">
+                                       <md-input-container >
+                                          <label>Meal Preference</label>
+                                          <md-select name="meal_pref" ng-model="meal_pref" required>
+                                             <md-option value="veg">Veg</md-option>
+                                             <md-option value="non-veg">Non-veg</md-option>
+                                          </md-select>
+                                       </md-input-container>
+                                    </div>
+                                    <div class="input-field col s12 m6 l3">
+                                       <md-input-container >
+                                          <label>Seat Preference</label>
+                                          <md-select name="seat_pref" ng-model="seat_pref" required>
+                                             <md-option value="AC">AC</md-option>
+                                             <md-option value="Non-AC">Non-AC</md-option>
+                                          </md-select>
+                                       </md-input-container>
+                                    </div>
+                                 </div>
+                                 <div class="row admin-note">
+                                    <div class="input-field col s12 m6 l6">
+                                       <textarea id="textarea1" class="form-textarea"></textarea>
+                                       <label for="textarea1">Specific Note to the Admin</label>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div ng-show="trip =='round-trip'">
+                                 <div class="row">
+                                    <div class="col s12">
+                                       <h2 class="form-title">Travel Details</h2>
+                                    </div>
+                                 </div>
+                                 <div class="row">
+                                    <div class="input-field col s12 m6 l3">
+                                       <md-input-container >
+                                          <label>Leaving From</label>
+                                          <md-select name="leaving_from" ng-model="leaving_from" required>
+                                             <md-option value="Mumbai">Kolkata</md-option>
+                                             <md-option value="Pune">Pune</md-option>
+                                             <md-option value="Delhi">Delhi</md-option>
+                                          </md-select>
+                                       </md-input-container>
+                                    </div>
+                                    <div class="input-field col s12 m6 l3">
+                                       <div class="datepicker">
+                                          <md-icon  class="icon-icon-calendar calendar-ico" ></md-icon>
+                                          <mdp-date-picker md-hide-icons="calendar" mdp-placeholder="Departure On"  mdp-date-filter="TravelAppCtrl.filterDate" ng-model="currentDateMinMax4"></mdp-date-picker>
+                                       </div>
+                                    </div>
+                                    <div class="input-field col s12 m6 l3">
+                                       <md-input-container >
+                                          <label>Going To</label>
+                                          <md-select name="going_to" ng-model="going_to" required>
+                                             <md-option value="Mumbai">Mumbai</md-option>
+                                             <md-option value="Pune">Pune</md-option>
+                                             <md-option value="Delhi">Delhi</md-option>
+                                          </md-select>
+                                       </md-input-container>
+                                    </div>
+                                    <div class="input-field col s12 m6 l3">
+                                       <div class="datepicker">
+                                          <md-icon  class="icon-icon-calendar calendar-ico" ></md-icon>
+                                          <mdp-date-picker md-hide-icons="calendar"  mdp-placeholder="Returning On"  mdp-date-filter="TravelAppCtrl.filterDate" ng-model="currentDateMinMax5"></mdp-date-picker>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <div class="row">
+                                    <div class="input-field col s12 m6 l3">
+                                       <input id="frequent-flyer-number2" type="text" >
+                                       <label for="frequent-flyer-number2">Frequent Flyer Number</label>
+                                    </div>
+                                    <div class="input-field col s12 m6 l3">
+                                       <md-input-container >
+                                          <label>Meal Preference</label>
+                                          <md-select name="meal_pref" ng-model="meal_pref" required>
+                                             <md-option value="veg">Veg</md-option>
+                                             <md-option value="non-veg">Non-veg</md-option>
+                                          </md-select>
+                                       </md-input-container>
+                                    </div>
+                                    <div class="input-field col s12 m6 l3">
+                                       <md-input-container >
+                                          <label>Seat Preference</label>
+                                          <md-select name="seat_pref" ng-model="seat_pref" required>
+                                             <md-option value="AC">AC</md-option>
+                                             <md-option value="Non-AC">Non-AC</md-option>
+                                          </md-select>
+                                       </md-input-container>
+                                    </div>
+                                 </div>
+                                 <div class="row admin-note">
+                                    <div class="input-field col s12 m6 l6">
+                                       <textarea id="textarea3" class="form-textarea"></textarea>
+                                       <label for="textarea3">Specific Note to the Admin</label>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div ng-show="trip =='multi-city'">
+                                 <div class="row">
+                                    <div class="col s12">
+                                       <h2 class="form-title">Travel Details</h2>
+                                    </div>
+                                 </div>
+                                 <div class="form-section-row">
+                                    <div class="row">
+                                       <div class="input-field col s12 m6 l3">
+                                          <md-input-container >
+                                             <label>Leaving From</label>
+                                             <md-select name="leaving_from" ng-model="leaving_from" required>
+                                                <md-option value="Mumbai">Kolkata</md-option>
+                                                <md-option value="Pune">Pune</md-option>
+                                                <md-option value="Delhi">Delhi</md-option>
+                                             </md-select>
+                                          </md-input-container>
+                                       </div>
+                                       <div class="input-field col s12 m6 l3">
+                                          <div class="datepicker">
+                                             <md-icon  class="icon-icon-calendar calendar-ico" ></md-icon>
+                                             <mdp-date-picker md-hide-icons="calendar"  mdp-placeholder="Departure On"   mdp-date-filter="TravelAppCtrl.filterDate" ng-model="currentDateMinMax6"></mdp-date-picker>
+                                          </div>
+                                       </div>
+                                       <div class="input-field col s12 m6 l3">
+                                          <md-input-container >
+                                             <label>Going To</label>
+                                             <md-select name="going_to" ng-model="going_to" required>
+                                                <md-option value="Mumbai">Mumbai</md-option>
+                                                <md-option value="Pune">Pune</md-option>
+                                                <md-option value="Delhi">Delhi</md-option>
+                                             </md-select>
+                                          </md-input-container>
+                                       </div>
+                                    </div>
+                                    <div class="row">
+                                       <div class="input-field col s12 m6 l3">
+                                          <input id="frequent-flyer-number3" type="text" >
+                                          <label for="frequent-flyer-number3">Frequent Flyer Number</label>
+                                       </div>
+                                       <div class="input-field col s12 m6 l2">
+                                          <md-input-container >
+                                             <label>Meal Preference</label>
+                                             <md-select name="meal_pref" ng-model="meal_pref" required>
+                                                <md-option value="veg">Veg</md-option>
+                                                <md-option value="non-veg">Non-veg</md-option>
+                                             </md-select>
+                                          </md-input-container>
+                                       </div>
+                                       <div class="input-field col s12 m6 l2">
+                                          <md-input-container >
+                                             <label>Seat Preference</label>
+                                             <md-select name="seat_pref" ng-model="seat_pref" required>
+                                                <md-option value="AC">AC</md-option>
+                                                <md-option value="Non-AC">Non-AC</md-option>
+                                             </md-select>
+                                          </md-input-container>
+                                       </div>
+                                       <div class="input-field col s12 m6 l5">
+                                          <textarea id="textarea4" class="form-textarea"></textarea>
+                                          <label for="textarea4">Specific Note to the Admin</label>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <hr class="devider">
+                                 <div class="form-section-row">
+                                    <div class="row">
+                                       <div class="input-field col s12 m6 l3">
+                                          <md-input-container >
+                                             <label>Leaving From</label>
+                                             <md-select name="leaving_from1" ng-model="leaving_from1" required>
+                                                <md-option value="Mumbai">Kolkata</md-option>
+                                                <md-option value="Pune">Pune</md-option>
+                                                <md-option value="Delhi">Delhi</md-option>
+                                             </md-select>
+                                          </md-input-container>
+                                       </div>
+                                       <div class="input-field col s12 m6 l3">
+                                          <div class="datepicker">
+                                             <md-icon  class="icon-icon-calendar calendar-ico" ></md-icon>
+                                             <mdp-date-picker md-hide-icons="calendar" mdp-placeholder="Departure On"  mdp-date-filter="TravelAppCtrl.filterDate" ng-model="currentDateMinMax7"></mdp-date-picker>
+                                          </div>
+                                       </div>
+                                       <div class="input-field col s12 m6 l3">
+                                          <md-input-container >
+                                             <label>Going To</label>
+                                             <md-select name="going_to1" ng-model="going_to1" required>
+                                                <md-option value="Mumbai">Mumbai</md-option>
+                                                <md-option value="Pune">Pune</md-option>
+                                                <md-option value="Delhi">Delhi</md-option>
+                                             </md-select>
+                                          </md-input-container>
+                                       </div>
+                                    </div>
+                                    <div class="row">
+                                       <div class="input-field col s12 m6 l3">
+                                          <input id="frequent-flyer-number4" type="text" >
+                                          <label for="frequent-flyer-number4">Frequent Flyer Number</label>
+                                       </div>
+                                       <div class="input-field col s12 m6 l2">
+                                          <md-input-container >
+                                             <label>Meal Preference</label>
+                                             <md-select name="meal_pref1" ng-model="meal_pref1" required>
+                                                <md-option value="veg">Veg</md-option>
+                                                <md-option value="non-veg">Non-veg</md-option>
+                                             </md-select>
+                                          </md-input-container>
+                                       </div>
+                                       <div class="input-field col s12 m6 l2">
+                                          <md-input-container >
+                                             <label>Seat Preference</label>
+                                             <md-select name="seat_pref1" ng-model="seat_pref1" required>
+                                                <md-option value="AC">AC</md-option>
+                                                <md-option value="Non-AC">Non-AC</md-option>
+                                             </md-select>
+                                          </md-input-container>
+                                       </div>
+                                       <div class="input-field col s12 m6 l5">
+                                          <textarea id="textarea5" class="form-textarea"></textarea>
+                                          <label for="textarea5">Specific Note to the Admin</label>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <div class="add-row row">
+                                    <div class="col m3">
+                                       <button type="button" class="btn white add-btn border-btn"><i class="icon-plus2"></i><span>Add Flight</span></button>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="form-footer">
+                                 <div class="form-footer-left-btn">
+                                    <button type="button" class="btn white cancel-btn border-btn"> Cancel</button>
+                                    <button type="button" class="btn white border-btn ">Save as Draft</button>
+                                 </div>
+                                 <div class="form-footer-right-btn">
+                                    <button type="button" class="btn  blue "> Prev</button>
+                                    <button type="button" class="btn  blue next-btn">Next</button>
+                                 </div>
+                              </div>
+                           </div>
+                        </form>
+                     </div>
+                  </md-tab-body>
+               </md-tab>
+               <md-tab>
+                  <md-tab-label class="tabs-icon"><a class="tabs-icon"><i class="icon-icon-hotel"></i><span>Hotel</span></a></md-tab-label>
+                  <md-tab-body>
+                     <div id="test3" class="col s12">
+                        <form>
+                           <div class="form-container container">
+                              <div class="row">
+                                 <div class="switch client-billable text-right"><label>Air travel Client Billable*<input type="checkbox" checked><span class="lever"></span></label></div>
+                              </div>
+                              <div class="form-section-row">
+                                 <div class="row">
+                                    <div class="input-field col s12 m6 l3">
+                                       <input id="city-name3" type="text" >
+                                       <label for="city-name3">City Name / Area Name</label>
+                                    </div>
+                                    <div class="input-field col s12 m6 l3">
+                                       <input id="check-in9" type="text" >
+                                       <label for="check-in9">Check In</label>
+                                    </div>
+                                    <div class="input-field col s12 m6 l3">
+                                       <input id="check-out9" type="text" >
+                                       <label for="check-out9">Check Out</label>
+                                    </div>
+                                 </div>
+                                 <div class="row">
+                                    <div class="input-field col s12 m6 l9">
+                                       <textarea id="textarea6" class="form-textarea"></textarea>
+                                       <label for="textarea6">Specific Note to the Admin</label>
+                                    </div>
+                                 </div>
+                              </div>
+                              <hr class="devider">
+                              <div class="form-section-row">
+                                 <div class="row">
+                                    <div class="input-field col s12 m6 l3">
+                                       <input id="city-name6" type="text" >
+                                       <label for="city-name6">City Name / Area Name</label>
+                                    </div>
+                                    <div class="input-field col s12 m6 l3">
+                                       <input id="check-in3" type="text" >
+                                       <label for="check-in3">Check In</label>
+                                    </div>
+                                    <div class="input-field col s12 m6 l3">
+                                       <input id="check-out3" type="text" >
+                                       <label for="check-out3">Check Out</label>
+                                    </div>
+                                 </div>
+                                 <div class="row">
+                                    <div class="input-field col s12 m6 l9">
+                                       <textarea id="textarea7" class="form-textarea"></textarea>
+                                       <label for="textarea7">Specific Note to the Admin</label>
+                                    </div>
+                                    <div class="col s12 m6 l3 delete-row">
+                                       <button type="button" class="btn white delete-btn border-btn"><i class="icon-delete"></i><span>Delete Hotel</span></button>
+                                    </div>
+                                 </div>
+                              </div>
+                              <hr class="devider">
+                              <div class="form-section-row">
+                                 <div class="row">
+                                    <div class="input-field col s12 m6 l3">
+                                       <input id="city-name2" type="text" >
+                                       <label for="city-name2">City Name / Area Name</label>
+                                    </div>
+                                    <div class="input-field col s12 m6 l3">
+                                       <input id="check-in4" type="text" >
+                                       <label for="check-in4">Check In</label>
+                                    </div>
+                                    <div class="input-field col s12 m6 l3">
+                                       <input id="check-out4" type="text" >
+                                       <label for="check-out4">Check Out</label>
+                                    </div>
+                                 </div>
+                                 <div class="row">
+                                    <div class="input-field col s12 m6 l9">
+                                       <textarea id="textarea8" class="form-textarea"></textarea>
+                                       <label for="textarea8">Specific Note to the Admin</label>
+                                    </div>
+                                    <div class="col s12 m6 l3 delete-row">
+                                       <button type="button" class="btn white delete-btn border-btn"><i class="icon-delete"></i><span>Delete Hotel</span></button>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="add-row row">
+                                 <div class="col m3">
+                                    <button type="button" class="btn white add-btn border-btn"><i class="icon-plus2"></i><span>Add Hotel</span></button>
+                                 </div>
+                              </div>
+                              <div class="form-footer">
+                                 <div class="form-footer-left-btn">
+                                    <button type="button" class="btn white cancel-btn border-btn"> Cancel</button>
+                                    <button type="button" class="btn white border-btn ">Save as Draft</button>
+                                 </div>
+                                 <div class="form-footer-right-btn">
+                                    <button type="button" class="btn  blue "> Prev</button>
+                                    <button type="button" class="btn  blue next-btn">Next</button>
+                                 </div>
+                              </div>
+                           </div>
+                        </form>
+                     </div>
+                  </md-tab-body>
+               </md-tab>
+               <md-tab >
+                  <md-tab-label><a class="tabs-icon"><i class="icon-car"></i><span>Cab</span> </a></md-tab-label>
+                  <md-tab-body>
+                     <div class="col s12">
+                        <form>
+                           <div class="form-container container">
+                              <div class="row">
+                                 <div class="switch client-billable text-right"><label>Local transportation Client Billable*<input type="checkbox" checked><span class="lever"></span></label></div>
+                              </div>
+                              <div class="form-section-row">
+                                 <div class="row">
+                                    <div class="input-field col s12 m6 l3">
+                                       <input id="city-name" type="text" >
+                                       <label for="city-name">Pickup From</label>
+                                    </div>
+                                    <div class="input-field col s12 m6 l3">
+                                       <input id="check-in55" type="text" >
+                                       <label for="check-in55">Going To</label>
+                                    </div>
+                                    <div class="input-field col s12 m6 l3">
+                                       <div class="datepicker">
+                                          <md-icon  class="icon-icon-calendar calendar-ico" ></md-icon>
+                                          <mdp-date-picker md-hide-icons="calendar" mdp-placeholder="Date"  mdp-date-filter="TravelAppCtrl.filterDate" ng-model="currentDateMinMax8"></mdp-date-picker>
+                                       </div>
+                                    </div>
+                                    <div class="input-field col s12 m6 l2">
+                                       <div class="datepicker">
+                                          <md-icon  class="icon-clock3 calendar-ico" ></md-icon>
+                                          <mdp-time-picker mdp-placeholder="Time" ng-model="currenttime12"></mdp-time-picker>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <div class="row">
+                                    <div class="input-field col s12 m6 l9">
+                                       <textarea id="textarea9" class="form-textarea"></textarea>
+                                       <label for="textarea9">Specific Note to the Admin</label>
+                                    </div>
+                                    <div class="input-field col s12 m6 l2">
+                                       <md-input-container >
+                                          <label>Usage</label>
+                                          <md-select name="outstations11" ng-model="outstations11" required>
+                                             <md-option value="outstation1">Outstation1</md-option>
+                                             <md-option value="outstation2">Outstation2</md-option>
+                                          </md-select>
+                                       </md-input-container>
+                                    </div>
+                                 </div>
+                              </div>
+                              <hr class="devider">
+                              <div class="form-section-row">
+                                 <div class="row">
+                                    <div class="input-field col s12 m6 l3">
+                                       <input id="city-name1" type="text" >
+                                       <label for="city-name1">Pickup From</label>
+                                    </div>
+                                    <div class="input-field col s12 m6 l3">
+                                       <input id="check-in" type="text" >
+                                       <label for="check-in">Going To</label>
+                                    </div>
+                                    <div class="input-field col s12 m6 l3">
+                                       <div class="datepicker">
+                                          <md-icon  class="icon-icon-calendar calendar-ico" ></md-icon>
+                                          <mdp-date-picker md-hide-icons="calendar" mdp-placeholder="Date" mdp-date-filter="TravelAppCtrl.filterDate" ng-model="currentDateMinMax9"></mdp-date-picker>
+                                       </div>
+                                    </div>
+                                    <div class="input-field col s12 m6 l2">
+                                       <div class="datepicker">
+                                          <md-icon  class="icon-clock3 calendar-ico" ></md-icon>
+                                          <mdp-time-picker mdp-placeholder="Time" ng-model="currenttime1"></mdp-time-picker>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <div class="row">
+                                    <div class="input-field col s12 m6 l8">
+                                       <textarea id="textarea10" class="form-textarea"></textarea>
+                                       <label for="textarea10">Specific Note to the Admin</label>
+                                    </div>
+                                    <div class="input-field col s12 m6 l2">
+                                       <md-input-container >
+                                          <label>Usage</label>
+                                          <md-select name="outstation" ng-model="outstation" required>
+                                             <md-option value="outstation1">Outstation1</md-option>
+                                             <md-option value="outstation2">Outstation2</md-option>
+                                          </md-select>
+                                       </md-input-container>
+                                    </div>
+                                    <div class="col s12 m6 l2 delete-row">
+                                       <button type="button" class="btn white delete-btn border-btn"><i class="icon-delete"></i><span>Delete Cab</span></button>
+                                    </div>
+                                 </div>
+                              </div>
+                              <hr class="devider">
+                              <div class="form-section-row">
+                                 <div class="row">
+                                    <div class="input-field col s12 m6 l3">
+                                       <input id="city-name25" type="text" >
+                                       <label for="city-name25">Pickup From</label>
+                                    </div>
+                                    <div class="input-field col s12 m6 l3">
+                                       <input id="check-in33" type="text" >
+                                       <label for="check-in33">Going To</label>
+                                    </div>
+                                    <div class="input-field col s12 m6 l3">
+                                       <div class="datepicker">
+                                          <md-icon  class="icon-clock3 calendar-ico" ></md-icon>
+                                          <mdp-date-picker md-hide-icons="calendar" mdp-placeholder="Date" mdp-date-filter="TravelAppCtrl.filterDate" ng-model="currentDateMinMax10"></mdp-date-picker>
+                                       </div>
+                                    </div>
+                                    <div class="input-field col s12 m6 l2">
+                                       <div class="datepicker">
+                                          <md-icon  class="icon-icon-calendar calendar-ico" ></md-icon>
+                                          <mdp-time-picker mdp-placeholder="Time" ng-model="currenttime2"></mdp-time-picker>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <div class="row">
+                                    <div class="input-field col s12 m6 l8">
+                                       <textarea id="textarea2" class="form-textarea"></textarea>
+                                       <label for="textarea2">Specific Note to the Admin</label>
+                                    </div>
+                                    <div class="input-field col s12 m6 l2">
+                                       <md-input-container >
+                                          <label>Usage</label>
+                                          <md-select name="outstations2" ng-model="outstations2" required>
+                                             <md-option value="outstation1">Outstation1</md-option>
+                                             <md-option value="outstation2">Outstation2</md-option>
+                                          </md-select>
+                                       </md-input-container>
+                                    </div>
+                                    <div class="col s12 m6 l2 delete-row">
+                                       <button type="button" class="btn white delete-btn border-btn"><i class="icon-delete"></i><span>Delete Cab</span></button>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="add-row row">
+                                 <div class="col m3">
+                                    <button type="button" class="btn white add-btn border-btn"><i class="icon-plus2"></i><span>Add Cab</span></button>
+                                 </div>
+                              </div>
+                              <div class="form-footer">
+                                 <div class="form-footer-left-btn">
+                                    <button type="button" class="btn white cancel-btn border-btn"> Cancel</button>
+                                    <button type="button" class="btn white border-btn ">Save as Draft</button>
+                                 </div>
+                                 <div class="form-footer-right-btn">
+                                    <button type="button" class="btn  blue "> Prev</button>
+                                    <button type="button" class="btn  blue next-btn">Next</button>
+                                 </div>
+                              </div>
+                           </div>
+                        </form>
+                     </div>
+                  </md-tab-body>
+               </md-tab>
+            </md-tabs >
+         </div>
+         <div class="page-footer footer-section">
+            <div class="footer-content">
+               <div class="left copyright-text">&copy; 2017 <a href="">Xoriant Corporation</a>. All rights resereved.</div>
+               <div class="right right-footer-list">
+                  <ul class="footer-list">
+                     <li><a>Home</a></li>
+                     <li><a>Travel Guide</a></li>
+                     <li><a>Privacy Policy</a></li>
+                     <li><a>Contact Us</a></li>
+                  </ul>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- content will go here -->
+      <script>
+         angular.module('TravelApp', [ "ngMaterial","ngAnimate","ngAria","ngMessages","mdPickers"]).controller('TravelAppCtrl',['$scope', '$mdSidenav','$mdpDatePicker',  function($scope, $mdSidenav,$mdpDatePicker) {        
+         $scope.trip = "one-way";  
+           $scope.currentDate = new Date();
+           	this.showDatePicker = function(ev) {
+            	$mdpDatePicker($scope.currentDate, {
+                targetEvent: ev
+              }).then(function(selectedDate) {
+                $scope.currentDate = selectedDate;
+              });;
+            };           
+            this.filterDate = function(date) {
+              return moment(date).date() % 2 == 0;
+            };
+         this.showTimePicker = function(ev) {
+         $mdpTimePicker($scope.currentTime, {
+         targetEvent: ev
+         }).then(function(selectedDate) {
+         $scope.currentTime = selectedDate;
+         });;
+         }         
+         $scope.showMobileMainHeader = true;
+         $scope.openSideNavPanel = function() {
+         $mdSidenav('left').open();
+         };
+         $scope.closeSideNavPanel = function() {
+         $mdSidenav('left').close()
+         };
+           }]);
+           
+      </script>
+   </body>
+</html>

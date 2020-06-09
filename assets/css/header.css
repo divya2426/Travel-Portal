@@ -1,0 +1,206 @@
+
+.logo-ul a {
+    font-size: 28px;
+}
+.logo-head {
+    border-right: 1px solid #fff;
+}
+.logo-my-travel {
+    background: url(../img/logo-my-travel.png);
+    height: 21px;
+    background-repeat: no-repeat;
+    width: 134px;
+}
+nav .nav-wrapper {
+    padding: 0px 10px;
+}
+nav,
+nav .nav-wrapper i,
+nav a.button-collapse,
+nav a.button-collapse i {
+    height: 64px;
+    line-height: 64px;
+}
+.nav-row
+{
+	    display: flex;
+    vertical-align: middle;
+    height: 64px;
+    align-items: center;
+	width:100%;
+	margin:0;
+	padding:0;
+}
+.nav-row i
+{
+	color:#fff;
+}
+.nav-col{
+	    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    vertical-align: middle;
+}
+.navbar-fixed {
+    height: 64px;
+}
+.navbar-fixed {
+    z-index: 9999;
+}
+.profile-img {
+    padding: 0px;
+}
+.right-sidenav li:not(:last-child) {
+    border-right: 2px solid rgba(255, 255, 255, 0.62);
+}
+.icon-menu5 {
+    font-size: 16px;
+    padding: 0px 10px;
+}
+.right-sidenav {
+    display: flex;
+    margin: 0px;
+    padding: 0px;
+    height: 64px;
+    line-height: 64px;
+    float: right;
+}
+.right-sidenav li {
+    padding: 0px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.nav-header .md-button.md-icon-button {
+    margin: 0 10px 0px 0px;
+    height: 40px;
+    min-width: 0;
+    line-height: 24px;
+    padding: 8px;
+    width: 40px;
+    border-radius: 50%;
+    padding: 0;
+}
+.menu-btn md-icon {
+    margin-top: -15px;
+}
+.menu-btn
+{
+	    min-width: initial;
+    padding: 0;
+    margin-right: 15px;
+}
+.nav-head .md-toolbar-tools {
+    padding: 0;
+}
+#grad {
+    background: #25C07D;
+    /* For browsers that do not support gradients */
+    
+    background: -webkit-linear-gradient(left, #25C07D, #96D437);
+    /* For Safari 5.1 to 6.0 */
+    
+    background: -o-linear-gradient(right, #25C07D, #96D437);
+    /* For Opera 11.1 to 12.0 */
+    
+    background: -moz-linear-gradient(right, #25C07D, #96D437);
+    /* For Firefox 3.6 to 15 */
+    
+    background: linear-gradient(to right, #25C07D, #96D437);
+    /* Standard syntax */
+}
+.button__badge {
+    background-color: #fa3e3e;
+    border-radius: 2px;
+    color: white;
+    padding: 1px 3px;
+    font-size: 10px;
+    position: absolute;
+    /* Position the badge within the relatively positioned button */
+    
+    top: 0;
+    right: 0;
+}
+.notifiaction button {
+    color: white;
+    display: inline-block;
+    position: relative;
+    padding: 2px 5px;
+}
+.badge1 {
+    position: relative;
+}
+.badge1[data-badge]:after {
+    content: attr(data-badge);
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    font-size: .7em;
+    background: #02AFF0;
+    color: white;
+    width: 18px;
+    height: 18px;
+    text-align: center;
+    line-height: 18px;
+    border-radius: 50%;
+}
+@media only screen and (max-width: 992px) {
+    nav .brand-logo {
+        left: initial;
+        -webkit-transform: translateX(0%);
+        transform: translateX(0%);
+    }
+    .right-sidenav li {
+        height: 55x;
+        line-height: 55px;
+    }
+}
+@media only screen and (max-width: 600px) {
+	.right-sidenav li {
+        height: 60px;
+        line-height: 60px;
+    }
+}
+@media only screen and (min-width: 736px) and (max-width: 1200px) {
+    .tablet {
+        display: block;
+    }
+    .desktop {
+        display: none;
+    }
+    .mobile {
+        display: none;
+    }
+}
+@media only screen and (min-width: 1200px) {
+    .desktop {
+        display: block;
+    }
+    .tablet {
+        display: none;
+    }
+    .mobile {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 736px) {
+    .mobile {
+        display: block;
+    }
+    .desktop {
+        display: none;
+    }
+    .tablet {
+        display: none;
+    }
+    .menu-right-section {
+        float: right;
+        width: 45%;
+    }
+    .menu-left-section {
+        float: left;
+        width: 55%;
+    }
+}

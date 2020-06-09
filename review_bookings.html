@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>Travel Portal</title>
+      <script src='assets/js/angular.min.js'></script><!-- Version 1.4.8 -->
+      <script src='assets/js/angular-material.min.js'></script> <!-- https://cdn.rawgit.com/angular/bower-material/v1.0.6/angular-material.min.js-->
+      <script src='assets/js/angular-animate.min.js'></script> <!--Version 1.4.8 -->
+      <script src='assets/js/angular-aria.min.js'></script><!--Version 1.4.8 -->
+      <link rel='stylesheet prefetch' href='assets/css/angular-material.min.css'>
+      <link type="text/css" rel="stylesheet" href="assets/css/materialize.css"/>
+      <link type="text/css" rel="stylesheet" href="assets/css/header.css"  />
+      <link type="text/css" rel="stylesheet" href="assets/css/review-booking.css"  />
+      <link type="text/css" rel="stylesheet" href="assets/css/footer.css"  />
+      <link type="text/css" rel="stylesheet" href="assets/fonts/icomoon/style.css" />
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+      <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"/>
+   </head>
+   <body>
+      <div ng-controller="TravelAppCtrl"  ng-app="TravelApp"  ng-cloak>
+         <div class="nav-header">
+            <md-sidenav-container>
+               <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left">
+                  <md-toolbar layout="row" id="grad">
+                     <div class="md-toolbar-tools">
+                        <div><a href="#" class="brand-logo"><img src="assets/img/logo-my-travel.png" alt="Travel Logo"></a></div>
+                        <div flex></div>
+                        <button md-button class="md-icon-button" aria-label="Close Side Panel" ng-click="closeSideNavPanel()">
+                           <md-icon class="md-default-theme material-icons">&#xE5CD;</md-icon>
+                        </button>
+                     </div>
+                  </md-toolbar>
+                  <div class="sidnav-content layout-padding" >
+                     Side navigation Panel
+                  </div>
+               </md-sidenav>
+            </md-sidenav-container>
+            <md-toolbar class="desktop nav-head" id="grad">
+               <div class="md-toolbar-tools">
+                  <button md-button class="md-icon-button menu-btn" aria-label="Side Panel" ng-click="openSideNavPanel()">
+                     <md-icon ><i class="icon-menu5 "></i></md-icon>
+                  </button>
+                  <a href="#" class="brand-logo"><img src="assets/img/logo-my-travel.png" alt="Logo"></a>
+                  <div flex="85"> </div>
+                  <div flex="15">
+                     <ul class="right-sidenav">
+                        <li><a href="#"><i class="icon-help"></i></a></li>
+                        <li class="notification"><a href="#"><i class="icon-notification badge1" data-badge="1"></i></a></li>
+                        <li><a><img src="assets/img/user.png" class="responsive-img circle right profile-img"  alt=""></a></li>
+                     </ul>
+                  </div>
+               </div>
+            </md-toolbar>
+            <md-toolbar class="tablet nav-head" id="grad">
+               <div class="md-toolbar-tools">
+                  <button md-button class="md-icon-button menu-btn" aria-label="Side Panel" ng-click="openSideNavPanel()">
+                     <md-icon ><i class="icon-menu5 "></i></md-icon>
+                  </button>
+                  <a href="#" class="brand-logo"><img src="assets/img/logo-my-travel.png" alt="Travel Logo"></a>
+                  <div class="flex"> </div>
+                  <div flex="20">
+                     <ul class="right-sidenav">
+                        <li><a href="#"><i class="icon-help"></i></a></li>
+                        <li class="notification"><a href="#"><i class="icon-notification badge1" data-badge="1"></i></a></li>
+                        <li><a><img src="assets/img/user.png" class="responsive-img circle right profile-img" alt=""></a></li>
+                     </ul>
+                  </div>
+               </div>
+            </md-toolbar>
+            <md-toolbar class="mobile nav-head" id="grad">
+               <div class="md-toolbar-tools">
+                  <div class="menu-left-section">
+                     <button md-button class="md-icon-button menu-btn" aria-label="Side Panel" ng-click="openSideNavPanel()">
+                        <md-icon ><i class="icon-menu5 "></i></md-icon>
+                     </button>
+                     <a href="#" class="brand-logo"><img src="assets/img/logo-my-travel.png" alt="Travel Logo"></a>
+                  </div>
+                  <div class="menu-right-section">
+                     <ul class="right-sidenav">
+                        <li><a href="#"><i class="icon-help"></i></a></li>
+                        <li><a href="#"><i class="icon-notification badge1" data-badge="1"></i></a></li>
+                        <li><a><img src="assets/img/user.png" class="responsive-img circle right profile-img" alt=""></a></li>
+                     </ul>
+                  </div>
+               </div>
+            </md-toolbar>
+         </div>
+         <div class="body-content review-booking-page page-content">
+            <div class="container review-booking-container">
+               <p class="page-title">Review Bookings</p>
+               <p class="section-title">Overview</p>
+               <div class="row preview-section-row">
+                  <div class="col l9">
+                     <p class="section-sub-title">Personal Details</p>
+                     <div class="row preview-details-row">
+                        <div class="col l3">
+                           <p class="info-head">Traveler Name</p>
+                           <p class="info-content">John Smith</p>
+                        </div>
+                        <div class="col l3">
+                           <p class="info-head">Mobile</p>
+                           <p class="info-content">1234567890</p>
+                        </div>
+                        <div class="col l3">
+                           <p class="info-head">Purpose</p>
+                           <p class="info-content">Client Presentaion</p>
+                        </div>
+                     </div>
+                     <p class="section-sub-title">Project & Client Details</p>
+                     <div class="row preview-details-row">
+                        <div class="col l3">
+                           <p class="info-head">Project</p>
+                           <p class="info-content">Lorem-Ipsum </p>
+                        </div>
+                        <div class="col l3">
+                           <p class="info-head">Approver</p>
+                           <p class="info-content">Bryan W</p>
+                        </div>
+                        <div class="col l3">
+                           <p class="info-head">Client</p>
+                           <p class="info-content">SAP</p>
+                        </div>
+                        <div class="col l3">
+                           <p class="info-head">Client Address</p>
+                           <p class="info-content">Steuart Tower, 1 Market St, San Francisco, CA 94105, USA</p>
+                        </div>
+                     </div>
+                     <p class="section-sub-title">Visa Details</p>
+                     <div class="row preview-details-row">
+                        <div class="col l3">
+                           <p class="info-head">Visa Type</p>
+                           <p class="info-content">Business</p>
+                        </div>
+                        <div class="col l3">
+                           <p class="info-head">Visa Expiration Date</p>
+                           <p class="info-content">25 March, 2028</p>
+                        </div>
+                        <div class="col l3">
+                           <p class="info-head">Passport Number</p>
+                           <p class="info-content">G125565RM484</p>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col l2 offset-s1">
+                     <p class="section-sub-title">Attached Documents</p>
+                     <div class="row preview-details-row">
+                        <div class="col l2">
+                           <p class="info-content">1.Passport</p>
+                           <p class="info-content">2.Visa</p>
+                        </div>
+                     </div>
+                     <p class="section-sub-title">Other Requests</p>
+                     <div class="row preview-details-row">
+                        <div class="col l12">
+                           <p class="info-content">1. Laptop</p>
+                           <p class="info-content">2. Forex</p>
+                           <p class="info-content">3. Summer Kit Allowance</p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+			   
+			    <p class="section-title">Flight ( Round Trip )</p>
+				 <div class="row preview-section-row">
+                  <div class="col l9">
+				  </div>
+				 </div>
+				
+            </div>
+         </div>
+      </div>
+      <script>
+         angular.module('TravelApp', ['ngMaterial'])
+         .controller('TravelAppCtrl', function($scope, $mdSidenav) {
+         $scope.showMobileMainHeader = true;
+         $scope.openSideNavPanel = function() {
+         $mdSidenav('left').open();
+         };
+         $scope.closeSideNavPanel = function() {
+         $mdSidenav('left').close();
+         };
+         });
+              
+      </script>
+   </body>
+</html>
